@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        table{
+            width: 500px;
+            height: 600px;
+            border: 1px solid black;
+            border-radius: 10px;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+        }
+        #result{
+            font-size: 40px;
+            width: 300px;
+            height: 50px;
+            border-radius: 5px;
+        }
+           .btn{
+            font-size: 40px;
+            width: 80px;
+            height: 50px;
+            border-radius: 5px;
+            background-color:darkgrey;
+        }
+        .btn:hover{
+            background-color: pink;
+            box-shadow: 5px 5px 10px burlywood;
+        }
+        .opera{
+            font-size: 40px;
+            width:80px;
+            height: 60px;
+            background-color: lime;
+            border-radius: 5px;
+        }
+        .opera:hover{
+            background-color: blue;
+            box-shadow: 5px 5px 10px burlywood;
+        }
+        h1{
+            text-align: center;
+           
+        color: coral;        }
+    </style>
+    <div id="claculator"></div>
+    <table>
+        <h1>Calculator !!!</h1>
+        <tr>
+            <td colspan="3"><input type="text" id="result"/></td>
+            <td> <input type="button" value="c" class="opera" onclick="clr()"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="btn" value="1" onclick="display('1')"/></td> 
+            <td><input type="button" class="btn" value="2" onclick="display('2')"/></td>
+            <td><input type="button" value="3" class="btn" onclick="display('3')"/></td>
+            <td><input type="button" value="+" class="opera" onclick="display('+')"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="4" class="btn" onclick="display('4')"/></td> 
+            <td><input type="button" value="5" class="btn" onclick="display('5')"/></td>
+            <td><input type="button" value="6" class="btn" onclick="display('6')"/></td>
+            <td><input type="button" value="-" class="opera" onclick="display('-')"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="7" class="btn" onclick="display('7')"/></td> 
+            <td><input type="button" value="8" class="btn" onclick="display('8')"/></td>
+            <td><input type="button" value="9" class="btn"  onclick="display('9')"/></td>
+            <td><input type="button" value="/" class="opera" onclick="display('/')"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="." class="btn" onclick="display('.')"/></td> 
+            <td><input type="button" value="0" class="btn" onclick="display('0')"/></td>
+            <td><input type="button" value="=" class="btn" onclick="calculate()"/></td>
+            <td><input type="button" value="*" class="opera" onclick="display('+')"/></td>
+        </tr>
+    </table>
+    <script>
+        function display(val)
+        {
+         document.getElementById('result').value+=val
+        }
+        function calculate()
+        {
+         let x=document.getElementById('result').value
+         let y=eval(x)
+         document.getElementById('result').value=y
+        }
+        function clr()
+        {
+   document.getElementById("result").value=""
+        }
+    </script>
+</body>
+</html>
